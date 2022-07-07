@@ -23,9 +23,11 @@ jobs:
           cd animdustry
           nimble install -y -d
           nimble deploy
-      - name: upload
-        uses: actions/upload-artifact@v3
+      - name: Upload to Build branch
+        uses: crazy-max/ghaction-github-pages@v2.6.0
         with:
-          name: build
-          path: ./animdustry/build/*
+          target_branch: Build
+          build_dir: .
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           
