@@ -20,12 +20,17 @@ jobs:
       - name: Nim
         run: |
           brew install nim
-      - name: Build Mac
+      - name: Set Up
         run: |
           export PATH="~/.nimble/bin:$PATH"
           source ~/.bashrc
           cd animdustry
           nimble install -y -d
+      - name: Build Mac
+        run: |
+          export PATH="~/.nimble/bin:$PATH"
+          source ~/.bashrc
+          cd animdustry
           nimble deploy
       - name: Upload to Build branch
         uses: crazy-max/ghaction-github-pages@v3
