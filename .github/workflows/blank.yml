@@ -12,7 +12,7 @@ jobs:
     steps:
       - name: clone
         run: |
-          git clone --recursive https://github.com/Anuken/animdustry
+          git clone --recursive -b v1.1 https://github.com/xem8k5/animdustry/
       - name: Nim
         run: |
           brew install nim
