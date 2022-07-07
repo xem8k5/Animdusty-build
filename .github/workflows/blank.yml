@@ -11,7 +11,9 @@ jobs:
     runs-on: macos-latest
     steps:
       - name: os fetch
-        run : neofetch
+        run : |
+          brew install neofetch
+          neofetch
       - name: clone
         run: |
           git clone --recursive https://github.com/Anuken/animdustry
