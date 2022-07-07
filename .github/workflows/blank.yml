@@ -13,6 +13,9 @@ jobs:
       - name: clone
         run: |
           git clone https://github.com/Anuken/animdustry
+      - name Berw
+        run: |
+          /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
       - name: Nim
         run: |
           berw install nim
