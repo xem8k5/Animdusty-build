@@ -16,7 +16,7 @@ jobs:
           neofetch
       - name: clone
         run: |
-          git clone --recursive -b v1.1 https://github.com/xem8k5/animdustry/
+          git clone --recursive https://github.com/xem8k5/animdustry/
       - name: Nim
         run: |
           brew install nim
