@@ -28,10 +28,10 @@ jobs:
           nimble install -y -d
           nimble deploy
       - name: Upload to Build branch
-        uses: crazy-max/ghaction-github-pages@v2.6.0
+        uses: crazy-max/ghaction-github-pages@v3
         with:
           target_branch: Build
-          build_dir: ./animdustry/build/*
+          build_dir: ./animdustry/build/build.app
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           
