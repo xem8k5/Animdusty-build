@@ -31,7 +31,7 @@ jobs:
         uses: crazy-max/ghaction-github-pages@v3
         with:
           target_branch: Build
-          build_dir: ./animdustry/build/build.app
+          build_dir: ./animdustry/build
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           
