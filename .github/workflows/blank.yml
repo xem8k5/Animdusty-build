@@ -12,10 +12,23 @@ jobs:
     steps:
       - name: clone
         run: |
-          git clone https://github.com/Anuken/animdustry
-      - name: Brew
-        run: |
-          /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+          git clone --recursive https://github.com/Anuken/animdustry
+#      - name: Brew
+#        run: |
+#          /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
       - name: Nim
         run: |
           brew install nim
+      - name: Build Mac
+        run: |
+          export PATH="~/.nimble/bin:$PATH"
+          source ~/.bashrc
+          cd animdustry
+          nimble install -y -d
+          find . > find.txt
+      - name: upload find
+        uses: actions/upload-artifact@v3
+        with:
+          name: find
+          path: ./animdustry/find.txt
+          
