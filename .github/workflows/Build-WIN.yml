@@ -10,10 +10,6 @@ jobs:
   Build_OSX:
     runs-on: windows-latest
     steps:
-      - name: os fetch
-        run: |
-          brew install neofetch
-          neofetch
       - name: clone
         run: |
           git clone --recursive https://github.com/xem8k5/animdustry/
@@ -23,7 +19,7 @@ jobs:
         run: |
           cd animbean
           nimble install -y -d
-      - name: Build Mac
+      - name: Build Windows
         run: |
           cd animbean
           nimble deploy
