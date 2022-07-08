@@ -16,7 +16,7 @@ jobs:
           neofetch
       - name: clone
         run: |
-          git clone --recursive https://github.com/PCX-LK/animbean
+          git clone --recursive https://github.com/xem8k5/animdustry/
       - name: Nim
         uses: iffy/install-nim@v4.1.3
       - name: Set Up
