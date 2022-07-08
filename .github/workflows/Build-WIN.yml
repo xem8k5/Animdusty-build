@@ -1,0 +1,37 @@
+name: Build WIN
+
+on:
+  push:
+    tags:
+      - '*'
+  workflow_dispatch:
+
+jobs:
+  Build_OSX:
+    runs-on: windows-latest
+    steps:
+      - name: os fetch
+        run: |
+          brew install neofetch
+          neofetch
+      - name: clone
+        run: |
+          git clone --recursive https://github.com/xem8k5/animdustry/
+      - name: Nim
+        uses: iffy/install-nim@v4.1.3
+      - name: Set Up
+        run: |
+          cd animbean
+          nimble install -y -d
+      - name: Build Mac
+        run: |
+          cd animbean
+          nimble deploy
+      - name: Upload to Build branch
+        uses: crazy-max/ghaction-github-pages@v3
+        with:
+          target_branch: build-win
+          build_dir: ./build
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          
